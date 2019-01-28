@@ -18,3 +18,4 @@ python -m pip install kivy.deps.gstreamer
 python -m pip install kivy.deps.angle
 python -m pip install kivy
 
+більш детальна інструкція для Linux: https://kivy.org/doc/stable/installation/installation.html#installation-devel
