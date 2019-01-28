@@ -8,18 +8,18 @@ import time
 from kivy.clock import Clock
 from kivy.uix.label import Label
 
-Config.set("graphics", "resizable", False)
+Config.set("graphics", "resizable", False)      # Задаємо параметри для вікна програми
 Config.set("graphics", "height", "480")
 Config.set("graphics", "width", "480")
 
 class The_Clicker_Program_App(App):
-    def do_the_update(self, args):
+    def do_the_update(self, args):             # Активує виконання функції self.to_add_every_second раз в одну секундку
         Clock.schedule_interval(self.to_add_every_second, 1)
 
-    def to_add_every_second(self, args):
+    def to_add_every_second(self, args):       # Активує додавання очок кожної секунди
         self.button1.text = str("%.2f" % (float(self.button1.text) + float(self.every_second_income)))
 
-    def to_click(self, args):
+    def to_click(self, args):           # Добавляє очки до головного показника при кліку на першу кнопку
         self.x = str(float(self.button1.text) + self.adder)
         self.button1.text = str("%.2f" % float(self.x))
         self.button1.background_color = [
@@ -29,19 +29,19 @@ class The_Clicker_Program_App(App):
             1
         ]
 
-    def upgrade_second(self, args):
+    def upgrade_second(self, args):     # Збільшує прирість очок на 0.05 за кожну секунду.
         if float(self.button1.text) >= self.every_second_income*100:
             self.button1.text = str("%.2f" % (float(self.button1.text) - float(self.every_second_income)*100))
             self.button3.text = "add every second:\n" + str("%.2f" % self.every_second_income)
             self.every_second_income += 0.05
 
-    def to_upgrade(self, args):
+    def to_upgrade(self, args):         # Збільшую кількість очок за один клік на 10%
         if float(self.button1.text) >= self.adder*10:
             self.button1.text = str("%.2f" % (float(self.button1.text) - self.adder*10))
             self.adder *= 1.1
             self.button2.text = "Upgrade to 10%\nYour adder is:\n" + str("%.2f" % self.adder)
 
-    def build(self):
+    def build(self):                    # Задаємо всі параметри і змінні, а також структуру і розміщення елементів
         self.title = "Clicker by W.R."
         self.x = 0
         self.adder = 1
@@ -49,7 +49,7 @@ class The_Clicker_Program_App(App):
         self.every_second_income = 0.05
         self.button3_text = "add every second:\n" + str(self.every_second_income)
         self.gl = GridLayout(cols=2, padding=8)
-        self.button1 = Button(
+        self.button1 = Button(                              # Чотири основні кнопки для взаємодії
             text = "0",
             font_size = 30,
             on_press = self.to_click,
@@ -87,5 +87,5 @@ class The_Clicker_Program_App(App):
         ))
         return self.bl
 
-if __name__ == "__main__":
-    The_Clicker_Program_App().run()
+if __name__ == "__main__":                # Запускаємо програму, якщо вона відкрита, як самомтійний файл,
+    The_Clicker_Program_App().run()       # а не імпортована, як бібліотека
