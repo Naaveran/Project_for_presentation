@@ -16,12 +16,5 @@
 pip install --upgrade kivy        # При наявному Python встановить, або оновить бібліотеку kivy
 
 Якщо программи не запускаються (трохи довший варіант):
-    
-pip uninstall kivy                                                                                 
-python -m pip install --upgrade pip wheel setuptools                                                            
-python -m pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew                                  
-python -m pip install kivy.deps.gstreamer                                                                   
-python -m pip install kivy.deps.angle                                                               
-python -m pip install kivy                                                                                      
-
+більш детальна інструкція для Windows: https://kivy.org/doc/stable/installation/installation-windows.html                                 
 більш детальна інструкція для Linux: https://kivy.org/doc/stable/installation/installation.html#installation-devel
