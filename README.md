@@ -15,6 +15,6 @@
 
 pip install --upgrade kivy        # При наявному Python встановить, або оновить бібліотеку kivy
 
-Якщо программи не запускаються (трохи довший варіант):
+Якщо программи не запускаються (трохи довший варіант):                                                
 більш детальна інструкція для Windows: https://kivy.org/doc/stable/installation/installation-windows.html                                 
 більш детальна інструкція для Linux: https://kivy.org/doc/stable/installation/installation.html#installation-devel
