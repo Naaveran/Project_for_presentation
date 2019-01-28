@@ -8,7 +8,7 @@ import time
 from kivy.clock import Clock
 from kivy.uix.label import Label
 
-Config.set("graphics", "resizable", False)      # Задаємо параметри для вікна програми
+Config.set("graphics", "resizable", False)     # Задаємо параметри для вікна програми
 Config.set("graphics", "height", "480")
 Config.set("graphics", "width", "480")
 
